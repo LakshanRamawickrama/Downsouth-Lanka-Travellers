@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./css/Hero.module.css";
-import { Search, MapPin, Calendar, Map } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import HeroImage from "../../public/images/hero.jpg";
 
@@ -40,34 +41,17 @@ export default function Hero() {
                 </motion.p>
 
                 <motion.div
-                    className={styles.searchBar}
+                    className={styles.heroActions}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <div className={styles.searchField}>
-                        <div className={styles.label}><MapPin size={14} style={{ marginRight: 4 }} /> Destination</div>
-                        <input type="text" placeholder="Where to?" className={styles.input} />
-                    </div>
-
-                    <div className={styles.searchField}>
-                        <div className={styles.label}><Map size={14} style={{ marginRight: 4 }} /> Tour Type</div>
-                        <select className={styles.input}>
-                            <option>Adventure</option>
-                            <option>Wildlife</option>
-                            <option>Cultural</option>
-                            <option>Beach Stay</option>
-                        </select>
-                    </div>
-
-                    <div className={styles.searchField}>
-                        <div className={styles.label}><Calendar size={14} style={{ marginRight: 4 }} /> Duration</div>
-                        <input type="text" placeholder="Days" className={styles.input} />
-                    </div>
-
-                    <button className={styles.searchBtn}>
-                        <Search size={24} />
-                    </button>
+                    <Link href="#tours" className={styles.exploreBtn}>
+                        <span>Explore Tours</span>
+                        <div className={styles.btnIcon}>
+                            <ArrowRight size={24} />
+                        </div>
+                    </Link>
                 </motion.div>
             </div>
         </section>
