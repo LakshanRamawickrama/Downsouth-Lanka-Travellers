@@ -26,8 +26,8 @@ export default function Navbar() {
         { name: "Home", href: "/" },
         { name: "Tours", href: "/tours" },
         { name: "Transport", href: "/#transport" },
-        { name: "About", href: "/#about" },
-        { name: "Captured Moments", href: "/about" },
+        { name: "About", href: "/about" },
+        { name: "Captured Moments", href: "/gallery" },
         { name: "Contact", href: "/contact" },
     ];
 

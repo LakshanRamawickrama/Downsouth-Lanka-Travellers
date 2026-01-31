@@ -26,7 +26,7 @@ export default function ToursPage() {
     });
 
     return (
-        <main style={{ paddingTop: "var(--nav-height)" }}>
+        <main>
             <Navbar />
 
             {/* Header */}
@@ -39,7 +39,7 @@ export default function ToursPage() {
                     style={{ objectFit: "cover", zIndex: -1 }}
                     priority
                 />
-                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0,0,0,0.5)", zIndex: 0 }} />
+                <div className={toursStyles.heroOverlay} />
 
                 <div className={`container ${toursStyles.heroContent}`}>
                     <motion.h1
