@@ -13,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { InquiryModalProvider } from "@/context/InquiryModalContext";
+import InquiryModal from "@/components/InquiryModal";
 
 export default function RootLayout({
   children,
@@ -22,8 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={outfit.variable}>
-        {children}
-        <WhatsAppButton />
+        <InquiryModalProvider>
+          {children}
+          <WhatsAppButton />
+          <InquiryModal />
+        </InquiryModalProvider>
       </body>
     </html>
   );

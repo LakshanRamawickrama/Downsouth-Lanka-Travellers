@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./css/Transport.module.css";
 import { Users, Briefcase, Snowflake } from "lucide-react";
 import { motion } from "framer-motion";
+import { useInquiryModal } from "@/context/InquiryModalContext";
 
 const vehicles = [
     {
@@ -45,6 +46,8 @@ const vehicles = [
 ];
 
 export default function Transport() {
+    const { openModal } = useInquiryModal();
+
     return (
         <section id="transport" className={styles.transportSection}>
             <div className="container">
@@ -81,7 +84,7 @@ export default function Transport() {
                                     {vehicle.ac && <span><Snowflake size={18} /> Climate Control</span>}
                                 </div>
 
-                                <button className={styles.cta}>
+                                <button className={styles.cta} onClick={openModal}>
                                     Enquire to Book
                                 </button>
                             </div>

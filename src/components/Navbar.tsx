@@ -6,10 +6,12 @@ import Link from "next/link";
 import styles from "./css/Navbar.module.css";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useInquiryModal } from "@/context/InquiryModalContext";
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const { openModal } = useInquiryModal();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,6 +23,12 @@ export default function Navbar() {
 
     // Close mobile menu when a link is clicked
     const closeMenu = () => setMobileMenuOpen(false);
+
+    const handleEnquireClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        openModal();
+        closeMenu();
+    };
 
     const navLinks = [
         { name: "Home", href: "/" },
@@ -53,9 +61,7 @@ export default function Navbar() {
                             {link.name}
                         </Link>
                     ))}
-                    <Link href="/contact">
-                        <button className={styles.cta}>Enquire Now</button>
-                    </Link>
+                    <button className={styles.cta} onClick={openModal}>Enquire Now</button>
                 </div>
 
                 <button
@@ -88,9 +94,7 @@ export default function Navbar() {
                                     {link.name}
                                 </Link>
                             ))}
-                            <Link href="/contact" onClick={closeMenu}>
-                                <button className={styles.mobileCta}>Enquire Now</button>
-                            </Link>
+                            <button className={styles.mobileCta} onClick={handleEnquireClick}>Enquire Now</button>
                         </div>
                     </motion.div>
                 )}

@@ -1,3 +1,5 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
@@ -9,10 +11,13 @@ import Link from "next/link";
 import Image from "next/image";
 import aboutImage from "../../public/images/about.png";
 import { Sun, Briefcase, Wallet, Heart } from "lucide-react";
+import { useInquiryModal } from "@/context/InquiryModalContext";
 
 import pageStyles from "./page.module.css";
 
 export default function Home() {
+  const { openModal } = useInquiryModal();
+
   return (
     <main>
       <Navbar />
@@ -128,9 +133,7 @@ export default function Home() {
             <Link href="/contact">
               <button className="btn-secondary" style={{ border: "2px solid white", background: "transparent", color: "white" }}>Contact Us</button>
             </Link>
-            <Link href="/contact">
-              <button className="btn-white">Get a Quote</button>
-            </Link>
+            <button className="btn-white" onClick={openModal}>Get a Quote</button>
           </div>
         </div>
       </section>

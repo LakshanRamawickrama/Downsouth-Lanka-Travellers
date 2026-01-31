@@ -9,12 +9,14 @@ import { allTours } from "@/data/tours";
 import styles from "@/components/css/Tours.module.css";
 import { useState } from "react";
 import tourHero from "../../../public/images/mirissa.jpg";
+import { useInquiryModal } from "@/context/InquiryModalContext";
 
 import toursStyles from "./ToursPage.module.css";
 
 export default function ToursPage() {
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedTag, setSelectedTag] = useState("All");
+    const { openModal } = useInquiryModal();
 
     const tags = ["All", ...Array.from(new Set(allTours.map(t => t.tag)))];
 
@@ -140,7 +142,10 @@ export default function ToursPage() {
                                     <p className={toursStyles.tourDescription}>
                                         {tour.description}
                                     </p>
-                                    <button className={`btn-primary ${toursStyles.enquireBtn}`}>
+                                    <button
+                                        className={`btn-primary ${toursStyles.enquireBtn}`}
+                                        onClick={openModal}
+                                    >
                                         Enquire for Details
                                     </button>
                                 </div>
