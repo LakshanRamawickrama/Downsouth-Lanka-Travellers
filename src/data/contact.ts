@@ -1,4 +1,28 @@
-export const contactConfig = {
+interface Address {
+    line1: string;
+    line2?: string;
+    full?: string;
+}
+
+interface ContactConfig {
+    phones: { label: string; value: string }[];
+    emails: { label: string; value: string }[];
+    address: Address;
+    socials: {
+        facebook: string;
+        instagram: string;
+        twitter: string;
+        whatsapp: string;
+    };
+    whatsapp: {
+        number: string;
+        linkValue: string;
+        defaultMessage: string;
+    };
+    googleMapsEmbed: string;
+}
+
+export const contactConfig: ContactConfig = {
     phones: [
         { label: "Mobile", value: "+94 71 606 8360" },
         { label: "Landline", value: "+94 76 730 7849" }
