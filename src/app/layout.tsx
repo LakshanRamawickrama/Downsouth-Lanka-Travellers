@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: "Experience the best of Sri Lanka with Downsouth Lanka Travellers. Custom tours, luxury transport, and unforgettable adventures across the island.",
 };
 
+import WhatsAppButton from "@/components/WhatsAppButton";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={outfit.variable}>
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );
