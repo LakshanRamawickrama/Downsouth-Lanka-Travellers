@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send } from 'lucide-react';
 import styles from './css/InquiryModal.module.css';
 import { useInquiryModal } from '@/context/InquiryModalContext';
+import { contactConfig } from '@/data/contact';
 
 const InquiryModal: React.FC = () => {
     const { isOpen, closeModal } = useInquiryModal();
@@ -84,7 +85,7 @@ const InquiryModal: React.FC = () => {
                                         <input
                                             type="tel"
                                             name="phone"
-                                            placeholder="+94 77 123 4567"
+                                            placeholder={contactConfig.phones[0].value}
                                             value={formData.phone}
                                             onChange={handleChange}
                                         />

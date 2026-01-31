@@ -1,9 +1,11 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./css/Footer.module.css";
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
+import { contactConfig } from "@/data/contact";
 
 export default function Footer() {
     return (
@@ -21,9 +23,9 @@ export default function Footer() {
                         reliable transport, and deep local insights across the Southern coast and beyond.
                     </p>
                     <div className={styles.socialLinks}>
-                        <a href="#" className={styles.socialIcon}><Facebook size={18} /></a>
-                        <a href="#" className={styles.socialIcon}><Instagram size={18} /></a>
-                        <a href="#" className={styles.socialIcon}><Twitter size={18} /></a>
+                        <a href={contactConfig.socials.facebook} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}><Facebook size={18} /></a>
+                        <a href={contactConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}><Instagram size={18} /></a>
+                        <a href={contactConfig.socials.twitter} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}><Twitter size={18} /></a>
                     </div>
                 </div>
 
@@ -53,15 +55,29 @@ export default function Footer() {
                     <h4>Contact Us</h4>
                     <div className={styles.contactItem}>
                         <MapPin size={20} />
-                        <span>Southern Highway Office,<br />Galle, Sri Lanka</span>
+                        <span>{contactConfig.address.line1}<br />{contactConfig.address.line2}</span>
                     </div>
                     <div className={styles.contactItem}>
                         <Phone size={20} />
-                        <span>+94 77 123 4567<br />+94 91 222 3456</span>
+                        <span>
+                            {contactConfig.phones.map((phone, i) => (
+                                <React.Fragment key={i}>
+                                    <a href={`tel:${phone.value.replace(/\s/g, '')}`}>{phone.value}</a>
+                                    {i < contactConfig.phones.length - 1 && <br />}
+                                </React.Fragment>
+                            ))}
+                        </span>
                     </div>
                     <div className={styles.contactItem}>
                         <Mail size={20} />
-                        <span>info@downsouthlanka.com<br />bookings@downsouthlanka.com</span>
+                        <span>
+                            {contactConfig.emails.map((email, i) => (
+                                <React.Fragment key={i}>
+                                    <a href={`mailto:${email.value}`}>{email.value}</a>
+                                    {i < contactConfig.emails.length - 1 && <br />}
+                                </React.Fragment>
+                            ))}
+                        </span>
                     </div>
                 </div>
             </div>

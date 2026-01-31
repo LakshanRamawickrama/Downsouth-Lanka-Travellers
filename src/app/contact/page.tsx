@@ -6,6 +6,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "@/components/css/Contact.module.css";
 import contact from "../../../public/images/contact.png";
+import { contactConfig } from "@/data/contact";
+
 export default function ContactPage() {
     return (
         <main style={{ backgroundColor: "#fafafa" }}>
@@ -60,7 +62,7 @@ export default function ContactPage() {
 
                             <div className={styles.formGroup}>
                                 <label className={styles.label}>Phone Number</label>
-                                <input type="tel" className={styles.input} placeholder="+1 (555) 000-0000" />
+                                <input type="tel" className={styles.input} placeholder={contactConfig.phones[0].value} />
                             </div>
 
                             <div className={styles.formGroup}>
@@ -85,7 +87,7 @@ export default function ContactPage() {
                     <h2 className={styles.mapTitle}>Find Us</h2>
                     <div className={styles.mapContainer}>
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63456.91893347535!2d80.19083375!3d6.05597565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae173bb6932fce3%3A0x4a35b903f9c64c03!2sGalle%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1706691234567!5m2!1sen!2sus"
+                            src={contactConfig.googleMapsEmbed}
                             className={styles.mapFrame}
                             allowFullScreen
                             loading="lazy"

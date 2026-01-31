@@ -2,13 +2,11 @@
 
 import React from 'react';
 import styles from './css/WhatsAppButton.module.css';
+import { contactConfig } from '@/data/contact';
 
 const WhatsAppButton: React.FC = () => {
-    // Replace with the actual phone number (including country code)
-    const phoneNumber = "+94771234567";
-    const message = "Hi! I'm interested in booking a tour with Downsouth Lanka Travellers.";
-
-    const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
+    const { linkValue, defaultMessage } = contactConfig.whatsapp;
+    const whatsappUrl = `https://wa.me/${linkValue}?text=${encodeURIComponent(defaultMessage)}`;
 
     return (
         <a
