@@ -20,10 +20,10 @@ export default function Footer() {
                         Your premium gateway to the wonders of Sri Lanka. We specialize in providing unforgettable experiences,
                         reliable transport, and deep local insights across the Southern coast and beyond.
                     </p>
-                    <div style={{ display: "flex", gap: "1.5rem" }}>
-                        <Facebook size={20} className={styles.link} style={{ cursor: "pointer" }} />
-                        <Instagram size={20} className={styles.link} style={{ cursor: "pointer" }} />
-                        <Twitter size={20} className={styles.link} style={{ cursor: "pointer" }} />
+                    <div className={styles.socialLinks}>
+                        <a href="#" className={styles.socialIcon}><Facebook size={18} /></a>
+                        <a href="#" className={styles.socialIcon}><Instagram size={18} /></a>
+                        <a href="#" className={styles.socialIcon}><Twitter size={18} /></a>
                     </div>
                 </div>
 
@@ -31,10 +31,10 @@ export default function Footer() {
                     <h4>Quick Links</h4>
                     <div className={styles.links}>
                         <Link href="/" className={styles.link}>Home</Link>
-                        <Link href="#tours" className={styles.link}>Tour Packages</Link>
-                        <Link href="#transport" className={styles.link}>Our Fleet</Link>
-                        <Link href="#about" className={styles.link}>About Us</Link>
-                        <Link href="#contact" className={styles.link}>Contact</Link>
+                        <Link href="/tours" className={styles.link}>Tour Packages</Link>
+                        <Link href="/#transport" className={styles.link}>Our Fleet</Link>
+                        <Link href="/#about" className={styles.link}>About Us</Link>
+                        <Link href="/contact" className={styles.link}>Contact</Link>
                     </div>
                 </div>
 
@@ -52,23 +52,25 @@ export default function Footer() {
                 <div className={styles.column}>
                     <h4>Contact Us</h4>
                     <div className={styles.contactItem}>
-                        <MapPin size={20} style={{ color: "var(--primary)" }} />
+                        <MapPin size={20} />
                         <span>Southern Highway Office,<br />Galle, Sri Lanka</span>
                     </div>
                     <div className={styles.contactItem}>
-                        <Phone size={20} style={{ color: "var(--primary)" }} />
+                        <Phone size={20} />
                         <span>+94 77 123 4567<br />+94 91 222 3456</span>
                     </div>
                     <div className={styles.contactItem}>
-                        <Mail size={20} style={{ color: "var(--primary)" }} />
+                        <Mail size={20} />
                         <span>info@downsouthlanka.com<br />bookings@downsouthlanka.com</span>
                     </div>
                 </div>
             </div>
 
-            <div className={styles.bottom}>
-                <div className="container">
-                    &copy; {new Date().getFullYear()} Downsouth Lanka Travellers. All Rights Reserved. Designed for Excellence.
+            <div className={`container ${styles.bottom}`}>
+                <div>&copy; {new Date().getFullYear()} Downsouth Lanka Travellers. All Rights Reserved.</div>
+                <div className={styles.bottomLinks}>
+                    <Link href="/privacy" className={styles.link}>Privacy Policy</Link>
+                    <Link href="/terms" className={styles.link}>Terms of Service</Link>
                 </div>
             </div>
         </footer>

@@ -8,46 +8,51 @@ import { motion } from "framer-motion";
 const vehicles = [
     {
         name: "Luxury Mini Van",
-        image: "https://images.unsplash.com/photo-1518306727298-4c17e1bf6942?q=80&w=600&auto=format&fit=crop",
-        desc: "Perfect for families. Comfortable seating for up to 8 passengers.",
+        image: "https://images.unsplash.com/photo-1549411989-388a101e4913?q=80&w=1200&auto=format&fit=crop",
+        desc: "The ultimate choice for family adventures. Spacious, plush interiors with panoramic windows for viewing the island.",
         capacity: "6-8",
-        luggage: "4-6",
-        ac: true
+        luggage: "Large",
+        ac: true,
+        badge: "Most Popular"
     },
     {
         name: "Premium SUV",
-        image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=600&auto=format&fit=crop",
-        desc: "Ideal for couples or small groups seeking comfort and style.",
+        image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        desc: "Traverse any terrain in absolute luxury. Perfect for couples or small families seeking style and safety.",
         capacity: "3-4",
-        luggage: "2-3",
-        ac: true
+        luggage: "Medium",
+        ac: true,
+        badge: "Luxury Choice"
     },
     {
-        name: "Tour Coach",
-        image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=600&auto=format&fit=crop",
-        desc: "Large coaches for corporate groups and big tour parties.",
-        capacity: "25-40",
-        luggage: "20+",
-        ac: true
+        name: "VIP Tour Coach",
+        image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop",
+        desc: "Coordinating large groups? Our VIP coaches offer lounge-style seating and full climate control.",
+        capacity: "25-45",
+        luggage: "Unlimited",
+        ac: true,
+        badge: "Group Travel"
     },
     {
-        name: "Classic Tuk-Tuk",
-        image: "https://images.unsplash.com/photo-1550974825-755176b5de31?q=80&w=600&auto=format&fit=crop",
-        desc: "The authentic Sri Lankan experience for short coastal trips.",
+        name: "Coastal Tuk-Tuk",
+        image: "https://images.unsplash.com/photo-1542662565-7e4b66bae529?q=80&w=1200&auto=format&fit=crop",
+        desc: "The heartbeat of Sri Lanka. Experience the warm breeze and vibrant streets in our well-maintained classic three-wheelers.",
         capacity: "2-3",
-        luggage: "1-2",
-        ac: false
+        luggage: "Small",
+        ac: false,
+        badge: "Local Experience"
     }
 ];
 
 export default function Transport() {
     return (
-        <section id="transport" className={`${styles.transportSection} section`}>
+        <section id="transport" className={styles.transportSection}>
             <div className="container">
-                <div className="text-center">
+                <div style={{ textAlign: "center", marginBottom: "5rem" }}>
                     <h2 className="section-title">Our Premium Fleet</h2>
-                    <p className="section-subtitle" style={{ margin: "0 auto 4rem" }}>
-                        Reliable and comfortable transportation for every type of traveler. From luxury vans to authentic tuk-tuks.
+                    <p className="section-subtitle" style={{ margin: "0 auto" }}>
+                        Travel in comfort and style across the island. Every vehicle in our
+                        handpicked fleet is meticulously maintained for your safety and relaxation.
                     </p>
                 </div>
 
@@ -59,17 +64,26 @@ export default function Transport() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: idx * 0.1 }}
+                            transition={{ duration: 0.6, delay: idx * 0.1 }}
                         >
                             <div className={styles.imageWrapper}>
                                 <Image src={vehicle.image} alt={vehicle.name} fill />
+                                <div className={styles.badge}>{vehicle.badge}</div>
                             </div>
-                            <h3 className={styles.vehicleName}>{vehicle.name}</h3>
-                            <p className={styles.vehicleDesc}>{vehicle.desc}</p>
-                            <div className={styles.features}>
-                                <span><Users size={16} /> {vehicle.capacity} Seats</span>
-                                <span><Briefcase size={16} /> {vehicle.luggage} Bags</span>
-                                {vehicle.ac && <span><Snowflake size={16} /> Fully A/C</span>}
+
+                            <div className={styles.cardBody}>
+                                <h3 className={styles.vehicleName}>{vehicle.name}</h3>
+                                <p className={styles.vehicleDesc}>{vehicle.desc}</p>
+
+                                <div className={styles.features}>
+                                    <span><Users size={18} /> {vehicle.capacity} Seats</span>
+                                    <span><Briefcase size={18} /> {vehicle.luggage} Luggage</span>
+                                    {vehicle.ac && <span><Snowflake size={18} /> Climate Control</span>}
+                                </div>
+
+                                <button className={styles.cta}>
+                                    Enquire to Book
+                                </button>
                             </div>
                         </motion.div>
                     ))}

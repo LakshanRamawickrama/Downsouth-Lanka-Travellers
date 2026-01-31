@@ -39,7 +39,8 @@ export default function Navbar() {
                     <Link href="/tours" className={styles.navLink}>Tours</Link>
                     <Link href="/#transport" className={styles.navLink}>Transport</Link>
                     <Link href="/#about" className={styles.navLink}>About</Link>
-                    <Link href="/#contact" className={styles.navLink}>Contact</Link>
+                    <Link href="/about" className={styles.navLink}>Captured Moments</Link>
+                    <Link href="/contact" className={styles.navLink}>Contact</Link>
                     <button className={styles.cta}>Enquire Now</button>
                 </div>
 

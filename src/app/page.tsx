@@ -5,6 +5,9 @@ import Tours from "@/components/Tours";
 import Transport from "@/components/Transport";
 import Destinations from "@/components/Destinations";
 import Footer from "@/components/Footer";
+import Link from "next/link";
+import Image from "next/image";
+import aboutImage from "../../public/images/about.png";
 
 export default function Home() {
   return (
@@ -32,13 +35,20 @@ export default function Home() {
               combining luxury with authenticity. Whether you&apos;re exploring the ancient ramparts of Galle Fort
               or chasing sunsets in Mirissa, we are with you every step of the way.
             </p>
-            <button className="btn-primary">Learn More About Us</button>
+            <Link href="/about">
+              <button className="btn-primary">Learn More About Us</button>
+            </Link>
           </div>
-          <div style={{ position: "relative", height: "500px", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-lg)" }}>
-            <img
-              src="https://images.unsplash.com/photo-1544070078-a212eda27b49?q=80&w=1000&auto=format&fit=crop"
+          <div style={{ position: "relative", height: "480px", width: "100%", borderRadius: "2rem", overflow: "hidden", boxShadow: "var(--shadow-lg)" }}>
+            <Image
+              src={aboutImage}
               alt="About Us"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              fill
+              style={{
+                objectFit: "cover",
+                transform: "scale(1.05)" // Zoom in to crop out the black borders from the image edges
+              }}
+              priority
             />
           </div>
         </div>
@@ -89,8 +99,12 @@ export default function Home() {
             Get in touch with our travel experts today and let us help you create the perfect itinerary for your Sri Lankan adventure.
           </p>
           <div style={{ display: "flex", gap: "1.5rem", justifyContent: "center" }}>
-            <button className="btn-secondary" style={{ border: "2px solid white", background: "transparent", color: "white" }}>Contact Us</button>
-            <button className="btn-white">Get a Quote</button>
+            <Link href="/contact">
+              <button className="btn-secondary" style={{ border: "2px solid white", background: "transparent", color: "white" }}>Contact Us</button>
+            </Link>
+            <Link href="/contact">
+              <button className="btn-white">Get a Quote</button>
+            </Link>
           </div>
         </div>
       </section>
