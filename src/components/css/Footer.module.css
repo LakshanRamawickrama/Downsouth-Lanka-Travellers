@@ -2,7 +2,8 @@
     background: #0d141c;
     /* Deep Midnight Navy - much better for premium look with Orange */
     color: white;
-    padding: 6rem 0 2.5rem;
+    padding: 4rem 0 2rem;
+    /* Reduced from 6rem */
     position: relative;
     overflow: hidden;
 }
@@ -21,14 +22,17 @@
 .grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: 4rem;
-    margin-bottom: 5rem;
+    gap: 3rem;
+    /* Reduced from 4rem */
+    margin-bottom: 3rem;
+    /* Reduced from 5rem */
 }
 
 .logoArea {
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 1.2rem;
+    /* Reduced from 1.8rem */
 }
 
 .logo {
@@ -38,14 +42,16 @@
 }
 
 .logoText {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    /* Reduced from 1.6rem */
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.5px;
 }
 
 .logoText span {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    /* Reduced from 0.9rem */
     font-weight: 500;
     display: block;
     margin-top: 4px;
@@ -56,16 +62,20 @@
 
 .aboutText {
     color: #a0aec0;
-    font-size: 0.95rem;
-    line-height: 1.8;
+    font-size: 0.9rem;
+    /* Reduced from 0.95rem */
+    line-height: 1.6;
+    /* Reduced from 1.8 */
 }
 
 .column h4 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    /* Reduced from 1.3rem */
     font-weight: 700;
-    margin-bottom: 2.2rem;
+    margin-bottom: 1.5rem;
+    /* Reduced from 2.2rem */
     position: relative;
-    padding-bottom: 0.8rem;
+    padding-bottom: 0.6rem;
     color: white;
 }
 
@@ -74,7 +84,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 35px;
+    width: 30px;
     height: 3px;
     background: var(--primary);
     border-radius: 2px;
@@ -83,12 +93,14 @@
 .links {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
+    /* Reduced from 1.2rem */
 }
 
 .link {
     color: #cbd5e0;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    /* Reduced from 0.95rem */
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: block;
 }
@@ -101,27 +113,32 @@
 .contactItem {
     display: flex;
     align-items: flex-start;
-    gap: 1.2rem;
-    margin-bottom: 1.8rem;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    /* Reduced from 1.8rem */
     color: #cbd5e0;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .contactItem svg {
     color: var(--primary);
     /* Use orange for icons to tie back to brand */
     flex-shrink: 0;
+    width: 18px;
+    /* Slightly smaller icons */
+    height: 18px;
 }
 
 .socialLinks {
     display: flex;
-    gap: 1.2rem;
-    margin-top: 1rem;
+    gap: 1rem;
+    margin-top: 0.5rem;
 }
 
 .socialIcon {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    /* Reduced from 40px */
+    height: 36px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
     display: flex;
@@ -139,23 +156,26 @@
 
 .bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding-top: 3rem;
+    padding-top: 2rem;
+    /* Reduced from 3rem */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    /* Reduced from 0.9rem */
     color: #718096;
 }
 
 .bottomLinks {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
+    /* Reduced from 2rem */
 }
 
 @media (max-width: 992px) {
     .grid {
         grid-template-columns: 1fr 1fr;
-        gap: 3.5rem;
+        gap: 3rem;
     }
 
     .bottom {
@@ -166,12 +186,85 @@
 }
 
 @media (max-width: 640px) {
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+    .footer {
+        padding: 3rem 0 2rem;
     }
 
-    .footer {
-        padding: 5rem 0 3rem;
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .logoArea {
+        grid-column: span 2;
+        /* Logo takes the whole top row */
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1rem;
+        order: 0;
+    }
+
+    /* Swap Quick Links (child 2) and Contact Us (child 4) */
+    .grid>div:nth-child(2) {
+        order: 2;
+        text-align: right;
+        /* Align text to the right on the right column */
+    }
+
+    .grid>div:nth-child(2) h4:after {
+        left: auto;
+        right: 0;
+        /* Align underline to the right */
+    }
+
+    .grid>div:nth-child(4) {
+        order: 1;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .aboutText {
+        display: none;
+    }
+
+    .socialLinks {
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+
+    /* Hide Destinations column on mobile - it is the 3rd child in the grid */
+    .grid>div:nth-child(3) {
+        display: none;
+    }
+
+    .column h4 {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+        display: block;
+    }
+
+    .column h4:after {
+        left: 0;
+        transform: none;
+    }
+
+    .contactItem {
+        justify-content: flex-start;
+        gap: 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .contactItem svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .bottomLinks {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
     }
 }

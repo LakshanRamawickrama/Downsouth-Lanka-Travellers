@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./css/Navbar.module.css";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -18,10 +19,22 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Close mobile menu when a link is clicked
+    const closeMenu = () => setMobileMenuOpen(false);
+
+    const navLinks = [
+        { name: "Home", href: "/" },
+        { name: "Tours", href: "/tours" },
+        { name: "Transport", href: "/#transport" },
+        { name: "About", href: "/#about" },
+        { name: "Captured Moments", href: "/about" },
+        { name: "Contact", href: "/contact" },
+    ];
+
     return (
         <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
             <div className={styles.navContainer}>
-                <Link href="/" className={styles.logo}>
+                <Link href="/" className={styles.logo} onClick={closeMenu}>
                     <Image
                         src="/logo.jpg"
                         alt="Downsouth Lanka Travellers"
@@ -35,29 +48,53 @@ export default function Navbar() {
                 </Link>
 
                 <div className={styles.navLinks}>
-                    <Link href="/" className={styles.navLink}>Home</Link>
-                    <Link href="/tours" className={styles.navLink}>Tours</Link>
-                    <Link href="/#transport" className={styles.navLink}>Transport</Link>
-                    <Link href="/#about" className={styles.navLink}>About</Link>
-                    <Link href="/about" className={styles.navLink}>Captured Moments</Link>
-                    <Link href="/contact" className={styles.navLink}>Contact</Link>
-                    <button className={styles.cta}>Enquire Now</button>
+                    {navLinks.map((link) => (
+                        <Link key={link.name} href={link.href} className={styles.navLink}>
+                            {link.name}
+                        </Link>
+                    ))}
+                    <Link href="/contact">
+                        <button className={styles.cta}>Enquire Now</button>
+                    </Link>
                 </div>
 
                 <button
                     className={styles.mobileMenuBtn}
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle Menu"
                 >
                     {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
             </div>
 
-            {/* Mobile Menu (Simplified for now) */}
-            {mobileMenuOpen && (
-                <div className={styles.mobileMenu}>
-                    {/* Mobile menu content would go here */}
-                </div>
-            )}
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        className={styles.mobileMenu}
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <div className={styles.mobileMenuLinks}>
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    href={link.href}
+                                    className={styles.mobileNavLink}
+                                    onClick={closeMenu}
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                            <Link href="/contact" onClick={closeMenu}>
+                                <button className={styles.mobileCta}>Enquire Now</button>
+                            </Link>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 }

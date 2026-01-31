@@ -11,7 +11,7 @@ export default function Footer() {
             <div className={`${styles.grid} container`}>
                 <div className={styles.logoArea}>
                     <div className={styles.logo}>
-                        <Image src="/logo.jpg" alt="Logo" width={60} height={60} style={{ borderRadius: "8px" }} />
+                        <Image src="/logo.jpg" alt="Logo" width={60} height={60} style={{ borderRadius: "50%" }} />
                         <div className={styles.logoText}>
                             DOWNSOUTH<br /><span>LANKA TRAVELLERS</span>
                         </div>

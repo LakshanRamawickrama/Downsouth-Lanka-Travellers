@@ -57,8 +57,10 @@ export default function Features() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: idx * 0.1 }}
                     >
-                        <div className={styles.icon}>{feature.icon}</div>
-                        <h3 className={styles.cardTitle}>{feature.title}</h3>
+                        <div className={styles.cardHeader}>
+                            <div className={styles.icon}>{feature.icon}</div>
+                            <h3 className={styles.cardTitle}>{feature.title}</h3>
+                        </div>
                         <p className={styles.cardText}>{feature.desc}</p>
                     </motion.div>
                 ))}
