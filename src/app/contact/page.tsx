@@ -22,14 +22,6 @@ export default function ContactPage() {
                     priority
                 />
                 <div className={styles.heroContent}>
-                    <motion.h1
-                        className={styles.title}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        Get in Touch
-                    </motion.h1>
                 </div>
             </section>
 

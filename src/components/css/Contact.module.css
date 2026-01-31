@@ -7,12 +7,12 @@
     justify-content: center;
     text-align: center;
     color: white;
-    background: #0d141c;
+    background: #ffffff;
     overflow: hidden;
 }
 
 .heroImage {
-    object-fit: cover !important;
+    object-fit: contain !important;
 }
 
 .heroContent {
@@ -27,6 +27,7 @@
     font-weight: 800;
     margin-bottom: 1.5rem;
     letter-spacing: -1px;
+    color: var(--secondary);
 }
 
 .subtitle {
