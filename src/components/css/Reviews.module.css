@@ -14,7 +14,8 @@
     position: relative;
     width: 100%;
     margin-bottom: 3rem;
-    padding: 0 1rem;
+    padding: 0 45px;
+    /* Added padding to give arrows their own space */
 }
 
 .sliderContainer {
@@ -56,11 +57,13 @@
 }
 
 .navPrev {
-    left: -22px;
+    left: 0;
+    /* Align within the padding */
 }
 
 .navNext {
-    right: -22px;
+    right: 0;
+    /* Align within the padding */
 }
 
 .navPrev:hover,
@@ -75,6 +78,8 @@
     justify-content: center;
     gap: 0.5rem;
     margin-top: 2rem;
+    flex-wrap: wrap;
+    /* Allow wrapping for many reviews */
 }
 
 .dot {
@@ -94,7 +99,7 @@
 
 .reviewCard {
     background: white;
-    padding: 2.5rem;
+    padding: 1.75rem 2rem;
     border-radius: 24px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: all 0.4s ease;
@@ -113,12 +118,12 @@
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .avatar {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary-light);
@@ -140,7 +145,7 @@
 .rating {
     display: flex;
     gap: 4px;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
     color: #ffc107;
 }
 
@@ -148,7 +153,7 @@
     font-size: 1rem;
     line-height: 1.8;
     color: var(--dark-gray);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     flex-grow: 1;
     font-style: italic;
 }
@@ -438,29 +443,123 @@
 }
 
 @media (max-width: 768px) {
+    .reviewsSection {
+        padding: 3rem 0;
+    }
+
+    .header {
+        margin-bottom: 2rem;
+    }
+
+    .sliderWrapper {
+        padding: 0 20px;
+        /* Space for arrows */
+    }
+
     .slide {
-        flex: 0 0 calc(100vw - 3rem);
+        flex: 0 0 calc((100% - 10px) / 2);
+        /* Fit 2 wider cards with a smaller gap */
+        width: calc((100% - 10px) / 2);
     }
 
     .track {
-        gap: 1rem;
+        gap: 10px;
+        /* Reduced gap to save space for card width */
+    }
+
+    .reviewCard {
+        padding: 1rem 0.6rem;
+        /* Even tighter padding */
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .reviewerInfo {
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .comment {
+        font-size: 0.78rem;
+        /* Slightly smaller to prevent long cards */
+        line-height: 1.35;
+        margin-bottom: 0.5rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        /* Limit lines to prevent overly long cards */
+        line-clamp: 6;
+        /* Standard property */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .name {
+        font-size: 0.95rem;
+    }
+
+    .country {
+        font-size: 0.75rem;
     }
 
     .navPrev,
     .navNext {
-        display: none;
+        display: flex;
+        width: 28px;
+        height: 28px;
+        top: 35%;
+        background: rgba(255, 255, 255, 0.9);
+        /* More transparent to show card beneath */
+    }
+
+    .navPrev {
+        left: -5px;
+    }
+
+    .navNext {
+        right: -5px;
+    }
+
+    .navPrev svg,
+    .navNext svg {
+        width: 18px;
+        height: 18px;
     }
 
     .modalContent {
-        padding: 2rem 1.5rem;
-        border-radius: 24px;
+        padding: 2rem 1.25rem;
+        border-radius: 20px;
+        width: 92%;
+        max-height: 95vh;
+        margin: 1rem;
+    }
+
+    .uploadSection {
+        margin-bottom: 0.5rem;
     }
 
     .formGrid {
         grid-template-columns: 1fr;
+        /* Single column on mobile */
+        gap: 0.75rem;
     }
 
     .formGroupFull {
         grid-column: span 1;
+    }
+
+    .formTitle h3 {
+        font-size: 1.25rem;
+    }
+
+    .submitBtn {
+        padding: 0.75rem;
+        font-size: 0.9rem;
     }
 }

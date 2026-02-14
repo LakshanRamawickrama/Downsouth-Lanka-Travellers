@@ -133,7 +133,7 @@ export default function Home() {
           </p>
           <div className={pageStyles.ctaButtons}>
             <Link href="/contact">
-              <button className="btn-secondary" style={{ border: "2px solid white", background: "transparent", color: "white" }}>Contact Us</button>
+              <button className="btn-outline-white">Contact Us</button>
             </Link>
             <button className="btn-white" onClick={openModal}>Get a Quote</button>
           </div>

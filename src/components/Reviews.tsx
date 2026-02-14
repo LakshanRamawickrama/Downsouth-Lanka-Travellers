@@ -32,7 +32,7 @@ export default function Reviews() {
 
     const fileInputRef = useRef<HTMLInputElement>(null);
 
-    const itemsPerPage = isMobile ? 1 : 3;
+    const itemsPerPage = isMobile ? 2 : 3;
     const totalPages = Math.ceil(reviews.length / itemsPerPage);
 
     // Responsive check
@@ -153,7 +153,7 @@ export default function Reviews() {
 
     const getTranslateX = () => {
         if (isMobile) {
-            return `calc(-${activeIndex * 100}% - ${activeIndex * 16}px)`;
+            return `calc(-${activeIndex * 100}% - ${activeIndex * 10}px)`;
         }
         return `calc(-${activeIndex * 100}% - ${activeIndex * 2}rem)`;
     };
