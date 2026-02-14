@@ -524,16 +524,14 @@
     }
 
     .comment {
-        font-size: 0.78rem;
-        line-height: 1.35;
-        margin-bottom: 0.5rem;
-        display: -webkit-box;
-        -webkit-line-clamp: 6;
-        line-clamp: 6;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        min-height: 100px;
-        /* Ensure paragraph covers a consistent area */
+        font-size: 0.85rem;
+        /* Increased slightly for readability */
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
+        display: block;
+        /* Removed line clamp */
+        overflow: visible;
+        min-height: auto;
     }
 
     .name {
