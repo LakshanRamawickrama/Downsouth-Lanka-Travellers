@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./css/Tours.module.css";
@@ -10,6 +11,15 @@ import { allTours } from "@/data/tours";
 const featuredTours = allTours.slice(0, 3);
 
 export default function Tours() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
     return (
         <section id="tours" className="section">
             <div className="container">
@@ -30,8 +40,11 @@ export default function Tours() {
                             className={styles.tourCard}
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: idx * 0.1 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{
+                                duration: 0.5,
+                                delay: isMobile ? 0 : idx * 0.1
+                            }}
                         >
                             <div className={styles.tourImage}>
                                 <Image src={tour.image} alt={tour.title} fill style={{ objectFit: "cover" }} />

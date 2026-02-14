@@ -61,7 +61,7 @@
 .card:hover .icon {
     background: var(--primary);
     color: white;
-    transform: rotate(-10deg) scale(1.1);
+    transform: scale(1.1);
 }
 
 .icon svg {
