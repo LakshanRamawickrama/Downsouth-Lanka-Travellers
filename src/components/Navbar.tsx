@@ -31,10 +31,11 @@ export default function Navbar() {
     };
 
     const navLinks = [
-        { name: "Home", href: "/" },
+        { name: "Home", href: "/#" },
         { name: "Tours", href: "/tours" },
         { name: "Transport", href: "/#transport" },
         { name: "About", href: "/about" },
+        { name: "Reviews", href: "/#reviews" },
         { name: "Captured Moments", href: "/gallery" },
         { name: "Contact", href: "/contact" },
     ];

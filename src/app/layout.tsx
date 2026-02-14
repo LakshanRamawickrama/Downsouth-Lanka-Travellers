@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 };
 
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ScrollToTop from "@/components/ScrollToTop";
 import { InquiryModalProvider } from "@/context/InquiryModalContext";
 import InquiryModal from "@/components/InquiryModal";
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <InquiryModalProvider>
           {children}
           <WhatsAppButton />
+          <ScrollToTop />
           <InquiryModal />
         </InquiryModalProvider>
       </body>

@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Tours from "@/components/Tours";
 import Transport from "@/components/Transport";
+import Reviews from "@/components/Reviews";
 import Destinations from "@/components/Destinations";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -26,6 +27,7 @@ export default function Home() {
       <Destinations />
       <Tours />
       <Transport />
+      <Reviews />
 
       {/* About Section - Brief in-page section */}
       <section id="about" className="section" style={{ background: "white" }}>

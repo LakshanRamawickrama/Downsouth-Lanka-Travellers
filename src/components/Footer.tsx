@@ -23,9 +23,8 @@ export default function Footer() {
                         reliable transport, and deep local insights across the Southern coast and beyond.
                     </p>
                     <div className={styles.socialLinks}>
-                        <a href={contactConfig.socials.facebook} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}><Facebook size={18} /></a>
-                        <a href={contactConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}><Instagram size={18} /></a>
-                        <a href={contactConfig.socials.twitter} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}><Twitter size={18} /></a>
+                        <a href={contactConfig.socials.facebook} target="https://www.facebook.com/share/1WkfqPp4ru/?mibextid=wwXIfr" rel="noopener noreferrer" className={styles.socialIcon}><Facebook size={18} /></a>
+                        <a href={contactConfig.socials.instagram} target="https://www.instagram.com/downsouth_travellers?igsh=MTc3Ym04ZzFkNGx2dw%3D%3D&utm_source=qr" rel="noopener noreferrer" className={styles.socialIcon}><Instagram size={18} /></a>
                     </div>
                 </div>
 

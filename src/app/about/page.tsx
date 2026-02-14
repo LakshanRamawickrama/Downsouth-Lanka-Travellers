@@ -190,7 +190,7 @@ export default function AboutPage() {
                                 </div>
                                 <div className={styles.founderMeta}>
                                     <span className={styles.founderName}>Chandila M Waduge</span>
-                                    <span className={styles.founderRole}>Co-Founder & Aviation Expert</span>
+                                    <span className={styles.founderRole}>Aviation Professional & Tourism Industry Enthusiast</span>
                                 </div>
                             </div>
                             <div className={styles.founderInfo}>

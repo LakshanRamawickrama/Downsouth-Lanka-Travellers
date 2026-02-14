@@ -178,3 +178,8 @@ img {
     font-size: 2rem;
   }
 }
+
+/* Fix for fixed header overlapping anchor links */
+[id] {
+  scroll-margin-top: calc(var(--nav-height) + 20px);
+}
