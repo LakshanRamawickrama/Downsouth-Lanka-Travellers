@@ -200,7 +200,7 @@ export default function Reviews() {
                                                     />
                                                 </div>
                                             )}
-                                            <div>
+                                            <div className={styles.reviewerDetails}>
                                                 <h4 className={styles.name}>{review.name}</h4>
                                                 <p className={styles.country}>{review.country}</p>
                                             </div>

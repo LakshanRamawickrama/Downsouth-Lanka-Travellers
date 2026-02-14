@@ -29,7 +29,7 @@ export const allTours: Tour[] = [
         image: yalaImage,
         tag: "Adventure",
         duration: "1 Day",
-        location: "Yala National Park",
+        location: "Yala",
         rating: 4.9,
         description: "Witness the majestic Sri Lankan leopard, elephants, and hundreds of bird species in their natural habitat. Our expert trackers ensure you don't miss a beat of the wild."
     },

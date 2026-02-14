@@ -136,6 +136,12 @@
     color: var(--secondary);
 }
 
+.reviewerDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .country {
     margin: 0;
     font-size: 0.9rem;
@@ -482,8 +488,20 @@
     }
 
     .reviewerInfo {
-        gap: 0.75rem;
-        margin-bottom: 0.75rem;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        min-height: 44px;
+        /* Stable height for avatar + name section */
+        display: flex;
+        align-items: center;
+    }
+
+    .reviewerDetails {
+        min-height: 32px;
+        /* Stable height for name + country */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .avatar {
@@ -491,18 +509,23 @@
         height: 40px;
     }
 
+    .rating {
+        margin-bottom: 0.5rem;
+        min-height: 16px;
+        /* Stable height for stars */
+    }
+
     .comment {
         font-size: 0.78rem;
-        /* Slightly smaller to prevent long cards */
         line-height: 1.35;
         margin-bottom: 0.5rem;
         display: -webkit-box;
         -webkit-line-clamp: 6;
-        /* Limit lines to prevent overly long cards */
         line-clamp: 6;
-        /* Standard property */
         -webkit-box-orient: vertical;
         overflow: hidden;
+        min-height: 100px;
+        /* Ensure paragraph covers a consistent area */
     }
 
     .name {
