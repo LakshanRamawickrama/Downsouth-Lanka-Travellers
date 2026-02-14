@@ -41,7 +41,7 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
+        <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""} ${mobileMenuOpen ? styles.open : ""}`}>
             <div className={styles.navContainer}>
                 <Link href="/" className={styles.logo} onClick={closeMenu}>
                     <Image

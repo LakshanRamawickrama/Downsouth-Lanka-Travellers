@@ -50,12 +50,37 @@
     display: flex;
     flex-direction: column;
     line-height: 1;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease;
 }
 
 .logoText span {
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--muted);
+    transition: color 0.3s ease;
+}
+
+/* Make text white when navbar is NOT scrolled AND NOT open (over hero images) */
+.navbar:not(.scrolled):not(.open) .logoText {
+    color: white;
+}
+
+.navbar:not(.scrolled):not(.open) .logoText span {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar:not(.scrolled):not(.open) .navLink {
+    color: white;
+}
+
+.navbar:not(.scrolled):not(.open) .mobileMenuBtn {
+    color: white;
+}
+
+.open {
+    background: white;
+    box-shadow: var(--shadow-sm);
 }
 
 .navLinks {
