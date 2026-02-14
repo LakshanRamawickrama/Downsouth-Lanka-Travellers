@@ -8,16 +8,17 @@
 .card {
     background: white;
     padding: 2.5rem 2rem;
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     position: relative;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 1px solid #f0f0f0;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
     min-width: 0;
     box-sizing: border-box;
+    box-shadow: var(--shadow-sm);
 }
 
 /* Traveller's Guide style top accent */
@@ -99,10 +100,10 @@
 
     .card {
         padding: 1.5rem;
-        max-width: 450px;
-        /* Limit card width on mobile */
-        margin: 0 auto;
-        /* Center the narrowed cards */
+    }
+
+    .card:hover {
+        transform: none !important;
     }
 
     .cardHeader {
@@ -122,6 +123,10 @@
 
     .cardTitle {
         font-size: 1.1rem;
+    }
+
+    .card:hover .icon {
+        transform: none !important;
     }
 }
 

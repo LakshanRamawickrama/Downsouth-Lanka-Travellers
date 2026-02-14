@@ -64,10 +64,10 @@ export default function Destinations() {
                         <motion.div
                             key={idx}
                             className={`${styles.destinationCard} ${dest.isBig ? styles.bigCard : ""}`}
-                            initial={{ opacity: 0, scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.98 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: idx * 0.1 }}
+                            transition={{ duration: 0.5, delay: idx * 0.05 }}
                         >
                             <div className={styles.imageWrapper}>
                                 <Image src={dest.image} alt={dest.title} fill />
