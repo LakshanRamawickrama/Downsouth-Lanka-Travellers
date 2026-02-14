@@ -34,7 +34,9 @@ export default function Footer() {
                         <Link href="/" className={styles.link}>Home</Link>
                         <Link href="/tours" className={styles.link}>Tour Packages</Link>
                         <Link href="/#transport" className={styles.link}>Our Fleet</Link>
-                        <Link href="/#about" className={styles.link}>About Us</Link>
+                        <Link href="/about" className={styles.link}>About Us</Link>
+                        <Link href="/#reviews" className={styles.link}>Reviews</Link>
+                        <Link href="/gallery" className={styles.link}>Captured Moments</Link>
                         <Link href="/contact" className={styles.link}>Contact</Link>
                     </div>
                 </div>
