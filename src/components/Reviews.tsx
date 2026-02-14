@@ -153,7 +153,7 @@ export default function Reviews() {
 
     const getTranslateX = () => {
         if (isMobile) {
-            return `calc(-${activeIndex * 100}% - ${activeIndex * 10}px)`;
+            return `calc(-${activeIndex * 100}% - ${activeIndex * 8}px)`;
         }
         return `calc(-${activeIndex * 100}% - ${activeIndex * 2}rem)`;
     };
