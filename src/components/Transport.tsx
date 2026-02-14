@@ -5,11 +5,14 @@ import styles from "./css/Transport.module.css";
 import { Users, Briefcase, Snowflake } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInquiryModal } from "@/context/InquiryModalContext";
+import miniVan from "../../public/images/MiniVan.jpg"
+import suv from "../../public/images/SUV.jpg"
+import tukTuk from "../../public/images/Tuk-Tuk.jpg"
 
 const vehicles = [
     {
         name: "Luxury Mini Van",
-        image: "https://images.unsplash.com/photo-1549411989-388a101e4913?q=80&w=1200&auto=format&fit=crop",
+        image: miniVan,
         desc: "The ultimate choice for family adventures. Spacious, plush interiors with panoramic windows for viewing the island.",
         capacity: "6-8",
         luggage: "Large",
@@ -18,7 +21,7 @@ const vehicles = [
     },
     {
         name: "Premium SUV",
-        image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        image: suv,
         desc: "Traverse any terrain in absolute luxury. Perfect for couples or small families seeking style and safety.",
         capacity: "3-4",
         luggage: "Medium",
@@ -26,17 +29,8 @@ const vehicles = [
         badge: "Luxury Choice"
     },
     {
-        name: "VIP Tour Coach",
-        image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop",
-        desc: "Coordinating large groups? Our VIP coaches offer lounge-style seating and full climate control.",
-        capacity: "25-45",
-        luggage: "Unlimited",
-        ac: true,
-        badge: "Group Travel"
-    },
-    {
         name: "Coastal Tuk-Tuk",
-        image: "https://images.unsplash.com/photo-1542662565-7e4b66bae529?q=80&w=1200&auto=format&fit=crop",
+        image: tukTuk,
         desc: "The heartbeat of Sri Lanka. Experience the warm breeze and vibrant streets in our well-maintained classic three-wheelers.",
         capacity: "2-3",
         luggage: "Small",
