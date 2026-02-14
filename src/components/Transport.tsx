@@ -58,10 +58,10 @@ export default function Transport() {
                         <motion.div
                             key={idx}
                             className={styles.transportCard}
-                            initial={{ opacity: 0, scale: 0.98 }}
+                            initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: idx * 0.05 }}
+                            transition={{ duration: 0.5, delay: idx * 0.1 }}
                         >
                             <div className={styles.imageWrapper}>
                                 <Image src={vehicle.image} alt={vehicle.name} fill />

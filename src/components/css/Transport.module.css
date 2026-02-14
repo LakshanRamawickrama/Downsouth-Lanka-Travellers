@@ -22,7 +22,6 @@
 }
 
 .transportCard:hover {
-    transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     border-color: var(--primary);
 }
@@ -136,12 +135,4 @@
     box-shadow: 0 4px 8px rgba(255, 125, 0, 0.3);
 }
 
-@media (max-width: 768px) {
-    .transportCard:hover {
-        transform: none !important;
-    }
-
-    .cta:hover {
-        transform: none !important;
-    }
-}
+@media (max-width: 768px) {}

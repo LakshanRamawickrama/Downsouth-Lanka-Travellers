@@ -34,7 +34,6 @@
 }
 
 .card:hover {
-    transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     border-color: rgba(255, 125, 0, 0.2);
 }
@@ -102,10 +101,6 @@
         padding: 1.5rem;
     }
 
-    .card:hover {
-        transform: none !important;
-    }
-
     .cardHeader {
         gap: 1rem;
         margin-bottom: 1rem;
@@ -123,10 +118,6 @@
 
     .cardTitle {
         font-size: 1.1rem;
-    }
-
-    .card:hover .icon {
-        transform: none !important;
     }
 }
 

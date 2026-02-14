@@ -19,7 +19,6 @@
 }
 
 .destinationCard:hover {
-    transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
 
@@ -170,9 +169,5 @@
         font-size: 0.85rem;
         -webkit-line-clamp: 2;
         line-clamp: 2;
-    }
-
-    .destinationCard:hover {
-        transform: none !important;
     }
 }
